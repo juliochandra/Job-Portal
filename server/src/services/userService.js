@@ -20,6 +20,7 @@ const register = async (request) => {
      const result = await userRepository.createUser(validData);
 
      const response = {
+          id: result.id,
           firstName: result.firstName,
           lastName: result.lastName,
           email: result.email,
