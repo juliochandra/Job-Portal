@@ -105,3 +105,22 @@ describe("POST /api/users/login", () => {
           expect(response.body.error).toBe("Email or password is wrong");
      });
 });
+
+describe("GET /api/users/logout", () => {
+     beforeEach(async () => {
+          await utility.createUser();
+     });
+     afterEach(async () => {
+          await utility.deleteUser();
+     });
+
+     it("should can logout", async () => {
+          const response = await supertest(app).get("/api/users/logout");
+
+          expect(response.status).toBe(200);
+          expect(response.body.message).toBe(
+               "User logged out successfully!"
+          );
+          expect(response.body.success).toBe(true);
+     });
+});
