@@ -10,6 +10,8 @@ router.post("/login", userControler.login);
 router.get("/logout", userControler.logout);
 
 router.use(auth.authenticate);
+router.use(auth.isUser);
+
 router.post("/information", informationController.createInformation);
 
 module.exports = router;

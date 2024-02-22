@@ -8,7 +8,7 @@ const createInformation = async (req, res, next) => {
                birthday: req.body.birthday,
                userId: req.user.id,
           };
-          console.log(request, "request");
+
           const response = await informationService.createInformation(
                request
           );

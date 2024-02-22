@@ -13,9 +13,11 @@ const options = {
      secretOrKey: secret,
 };
 
+// eslint-disable-next-line consistent-return
 const extractToken = async (payload, done) => {
      try {
           const { id } = payload;
+
           if (payload.role === "user") {
                const user = await Users.findById(id);
 
@@ -25,14 +27,16 @@ const extractToken = async (payload, done) => {
                }
                return done(null, user);
           }
-          // if (payload.role === "admin") {
-          //   const admin = await db("petugas").where({ id: payload.id }).first(["id"]);
-          //   admin.role = payload.role;
-          //   if (!admin) {
-          //     return done(null, false);
+          //   if (payload.role === "admin") {
+          //        const admin = await db("petugas")
+          //             .where({ id: payload.id })
+          //             .first(["id"]);
+          //        admin.role = payload.role;
+          //        if (!admin) {
+          //             return done(null, false);
+          //        }
+          //        return done(null, admin);
           //   }
-          //   return done(null, admin);
-          // }
      } catch (error) {
           return done(error, false);
      }
