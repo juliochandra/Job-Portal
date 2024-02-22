@@ -11,7 +11,9 @@ const expired = process.env.JWT_EXPIRED;
 const register = async (request) => {
      const validData = validation(request, userValidation.register);
 
-     const user = await userRepository.findUser(validData.email);
+     const user = await userRepository.findUser({
+          email: validData.email,
+     });
      if (user.length > 0) {
           throw new ResponseError(400, "Email already exist");
      }
@@ -32,7 +34,9 @@ const register = async (request) => {
 const login = async (request) => {
      const validData = validation(request, userValidation.login);
 
-     const user = await userRepository.findUser(validData.email);
+     const user = await userRepository.findUser({
+          email: validData.email,
+     });
      if (user.length === 0) {
           throw new ResponseError(401, "Email or password is wrong");
      }
