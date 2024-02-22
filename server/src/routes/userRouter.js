@@ -13,5 +13,7 @@ router.use(auth.authenticate);
 router.use(auth.isUser);
 
 router.post("/information", informationController.createInformation);
+router.get("/information", informationController.findInformation);
+router.put("/information", informationController.updateInformation);
 
 module.exports = router;

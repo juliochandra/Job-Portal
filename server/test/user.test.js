@@ -2,7 +2,7 @@ const supertest = require("supertest");
 const app = require("../app");
 const utility = require("./utility");
 
-describe("POST /api/user/register", () => {
+describe("POST /api/users/register", () => {
      afterAll(async () => {
           await utility.deleteUser();
      });

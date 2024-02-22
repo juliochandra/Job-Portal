@@ -28,15 +28,6 @@
 					"response": []
 				},
 				{
-					"name": "logout",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "localhost:80/api/users/logout"
-					},
-					"response": []
-				},
-				{
 					"name": "login",
 					"request": {
 						"method": "POST",
@@ -51,6 +42,83 @@
 							}
 						},
 						"url": "localhost:80/api/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:80/api/users/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-information",
+			"item": [
+				{
+					"name": "createInformation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjI2MDgxLCJleHAiOjE3MDg3MTI0ODF9.HvRe6AjahR-QocZkwL7xIRzLcsb8fqo4CpCSH5X973I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"noHp\": \"081222333444\",\r\n    \"address\": \"jalan sesuatu no 1234, kota sesuatu, kabupaten sesuatu, provinsi sesuatu\",\r\n    \"birthday\": \"2024-02-21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/users/information"
+					},
+					"response": []
+				},
+				{
+					"name": "findInformation",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjI2MDgxLCJleHAiOjE3MDg3MTI0ODF9.HvRe6AjahR-QocZkwL7xIRzLcsb8fqo4CpCSH5X973I",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/information"
+					},
+					"response": []
+				},
+				{
+					"name": "updateInformation",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjI2MDgxLCJleHAiOjE3MDg3MTI0ODF9.HvRe6AjahR-QocZkwL7xIRzLcsb8fqo4CpCSH5X973I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"noHp\": \"081222333444\",\r\n    \"address\": \"update jalan sesuatu no 1234, kota sesuatu, kabupaten sesuatu, provinsi sesuatu\",\r\n    \"birthday\": \"2024-02-21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/users/information"
 					},
 					"response": []
 				}

@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const logger = require("./logging");
 
-// MongoDB connection string (replace <YOUR_DB_URI> with your actual MongoDB URI)
 const dbURI = process.env.DATABASE;
 
 const connectToMongoDB = async () => {
@@ -15,6 +14,7 @@ const connectToMongoDB = async () => {
 connectToMongoDB();
 
 const db = mongoose.connection;
+
 db.on("error", logger.error.bind(console, "connection error:"));
 db.once("open", () => {
      logger.info("Database connected");
