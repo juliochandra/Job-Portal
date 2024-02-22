@@ -1,42 +1,47 @@
-// const passport = require("passport");
-// const { Strategy } = require("passport-jwt");
+const passport = require("passport");
+const { Strategy } = require("passport-jwt");
+const Users = require("../models/userModel");
 
-// const JWT_SECRET = "JWT_SUPER_SECRET_CODE";
+const secret = process.env.JWT_SECRET;
 
-// const options = {
-//      jwtFromRequest: (req) => {
-//           return req.headers.authorization;
-//      },
-//      secretOrKey: JWT_SECRET,
-// };
+const options = {
+     jwtFromRequest: (req) => {
+          // console.log(req.headers.authorization, "masuk <=====");
 
-// const extractToken = async (payload, done) => {
-//      try {
-//           if (payload.role === "user") {
-//                const user = await db("masyarakat")
-//                     .where({ id: payload.id })
-//                     .first(["id"]);
-//                user.role = payload.role;
-//                if (!user) {
-//                     return done(null, false);
-//                }
-//                return done(null, user);
-//           }
-//           if (payload.role === "employer") {
-//                const admin = await db("petugas")
-//                     .where({ id: payload.id })
-//                     .first(["id"]);
-//                admin.role = payload.role;
-//                if (!admin) {
-//                     return done(null, false);
-//                }
-//                return done(null, admin);
-//           }
-//      } catch (error) {
-//           return done(error, false);
-//      }
-// };
+          return req.headers.authorization;
+     },
+     secretOrKey: secret,
+};
 
-// passport.use(new Strategy(options, extractToken));
+// eslint-disable-next-line consistent-return
+const extractToken = async (payload, done) => {
+     try {
+          const { id } = payload;
 
-// module.exports = passport;
+          if (payload.role === "user") {
+               const user = await Users.findById(id);
+
+               user.role = payload.role;
+               if (!user) {
+                    return done(null, false);
+               }
+               return done(null, user);
+          }
+          //   if (payload.role === "admin") {
+          //        const admin = await db("petugas")
+          //             .where({ id: payload.id })
+          //             .first(["id"]);
+          //        admin.role = payload.role;
+          //        if (!admin) {
+          //             return done(null, false);
+          //        }
+          //        return done(null, admin);
+          //   }
+     } catch (error) {
+          return done(error, false);
+     }
+};
+
+passport.use(new Strategy(options, extractToken));
+
+module.exports = passport;
