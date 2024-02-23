@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const { model, Schema } = mongoose;
 
 const documentSchema = new Schema({
-     documentType: {
+     documentName: {
           type: String,
           required: true,
      },
-     documentUrl: {
+     documentImage: {
           type: String,
           required: true,
      },

@@ -1,8 +1,13 @@
 const express = require("express");
+// controller
 const userControler = require("../controllers/userController");
 const informationController = require("../controllers/informationController");
 const educationController = require("../controllers/educationController");
+const experienceController = require("../controllers/experienceController");
+const documentController = require("../controllers/documentController");
+
 const auth = require("../middlewares/auth");
+const upload = require("../utilities/uploadCloudinary");
 
 const router = express.Router();
 
@@ -30,5 +35,37 @@ router.delete(
      "/education/:educationId",
      educationController.deleteEducation
 );
+
+// user-experience
+router.post("/experience", experienceController.createExperience);
+router.get("/experience", experienceController.findExperience);
+router.get(
+     "/experience/:experienceId",
+     experienceController.findExperienceById
+);
+router.put(
+     "/experience/:experienceId",
+     experienceController.updateExperience
+);
+router.delete(
+     "/experience/:experienceId",
+     experienceController.deleteExperience
+);
+
+// user-document
+router.post(
+     "/document",
+     upload.single("documentImage"),
+     documentController.createDocument
+);
+
+router.get("/document", documentController.findDocument);
+router.get("/document/:documentId", documentController.findDocumentById);
+router.put(
+     "/document/:documentId",
+     upload.single("documentImage"),
+     documentController.updateDocument
+);
+router.delete("/document/:documentId", documentController.deleteDocument);
 
 module.exports = router;
