@@ -11,12 +11,12 @@ const isUser = (req, res, next) => {
      }
 };
 
-// const isEmployer = (req, res, next) => {
-//      if (req.user.role === "employer") {
-//           next();
-//      } else {
-//           throw new ResponseError(401, "Unauthorized");
-//      }
-// };
+const isEmployer = (req, res, next) => {
+     if (req.user.role === "employer") {
+          next();
+     } else {
+          throw new ResponseError(401, "Unauthorized");
+     }
+};
 
-module.exports = { authenticate, isUser };
+module.exports = { authenticate, isUser, isEmployer };

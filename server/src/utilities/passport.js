@@ -1,6 +1,7 @@
 const passport = require("passport");
 const { Strategy } = require("passport-jwt");
 const Users = require("../models/userModel");
+const Employers = require("../models/employerModel");
 
 const secret = process.env.JWT_SECRET;
 
@@ -16,27 +17,27 @@ const options = {
 // eslint-disable-next-line consistent-return
 const extractToken = async (payload, done) => {
      try {
-          const { id } = payload;
+          try {
+               const { id, role } = payload;
+               let user;
 
-          if (payload.role === "user") {
-               const user = await Users.findById(id);
+               if (role === "user") {
+                    user = await Users.findById(id);
+               } else if (role === "employer") {
+                    user = await Employers.findById(id);
+               } else {
+                    return done(null, false);
+               }
 
-               user.role = payload.role;
                if (!user) {
                     return done(null, false);
                }
+
+               user.role = role;
                return done(null, user);
+          } catch (error) {
+               return done(error, false);
           }
-          //   if (payload.role === "admin") {
-          //        const admin = await db("petugas")
-          //             .where({ id: payload.id })
-          //             .first(["id"]);
-          //        admin.role = payload.role;
-          //        if (!admin) {
-          //             return done(null, false);
-          //        }
-          //        return done(null, admin);
-          //   }
      } catch (error) {
           return done(error, false);
      }
