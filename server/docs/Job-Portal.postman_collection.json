@@ -223,6 +223,271 @@
 			]
 		},
 		{
+			"name": "user-experience",
+			"item": [
+				{
+					"name": "createExperience",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4Njk2NTcxLCJleHAiOjE3MDg3ODI5NzF9.lZV_Ttb1d--b8-D_y9tDtYg-A__3KbhEqNUCTGAH0wg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\": \"google\",\r\n    \"position\": \"CTO\",\r\n    \"startDate\": \"2023-08-15\",\r\n    \"endDate\": \"2024-01-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/users/experience"
+					},
+					"response": []
+				},
+				{
+					"name": "findExperience",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4Njk2NTcxLCJleHAiOjE3MDg3ODI5NzF9.lZV_Ttb1d--b8-D_y9tDtYg-A__3KbhEqNUCTGAH0wg",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/experience"
+					},
+					"response": []
+				},
+				{
+					"name": "findExperienceById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4Njk2NTcxLCJleHAiOjE3MDg3ODI5NzF9.lZV_Ttb1d--b8-D_y9tDtYg-A__3KbhEqNUCTGAH0wg",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/experience/65d8a5e128a320756a752bc0"
+					},
+					"response": []
+				},
+				{
+					"name": "updateExperience",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4Njk2NTcxLCJleHAiOjE3MDg3ODI5NzF9.lZV_Ttb1d--b8-D_y9tDtYg-A__3KbhEqNUCTGAH0wg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\": \"yahoo\",\r\n    \"position\": \"CTO\",\r\n    \"startDate\": \"2023-08-15\",\r\n    \"endDate\": \"2024-01-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/users/experience/65d8a5e128a320756a752bc0"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteExperience",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4Njk2NTcxLCJleHAiOjE3MDg3ODI5NzF9.lZV_Ttb1d--b8-D_y9tDtYg-A__3KbhEqNUCTGAH0wg",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/experience/65d8a43f291f841560f8c754"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-document",
+			"item": [
+				{
+					"name": "createDocument",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NzE0MjgzLCJleHAiOjE3MDg4MDA2ODN9.B4mV2zmnuHZIvDy2gHK58uGB073wVb5teq2SH3qQ-LE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "documentName",
+									"value": "cv",
+									"type": "text"
+								},
+								{
+									"key": "documentImage",
+									"type": "file",
+									"src": "/D:/photo webdev/gallery/gallery-12.jpg"
+								}
+							]
+						},
+						"url": "localhost:80/api/users/document"
+					},
+					"response": []
+				},
+				{
+					"name": "findDocument",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NzE0MjgzLCJleHAiOjE3MDg4MDA2ODN9.B4mV2zmnuHZIvDy2gHK58uGB073wVb5teq2SH3qQ-LE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "localhost:80/api/users/document"
+					},
+					"response": []
+				},
+				{
+					"name": "findDocumentById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NzE0MjgzLCJleHAiOjE3MDg4MDA2ODN9.B4mV2zmnuHZIvDy2gHK58uGB073wVb5teq2SH3qQ-LE",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/document/65d8ef03fec77bc67f2a0fbd"
+					},
+					"response": []
+				},
+				{
+					"name": "updateDocument",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NzE0MjgzLCJleHAiOjE3MDg4MDA2ODN9.B4mV2zmnuHZIvDy2gHK58uGB073wVb5teq2SH3qQ-LE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "documentName",
+									"value": "ijazah",
+									"type": "text"
+								},
+								{
+									"key": "documentImage",
+									"type": "file",
+									"src": "/D:/photo webdev/gallery/gallery-1.jpg"
+								}
+							]
+						},
+						"url": "localhost:80/api/users/document/65d8ef03fec77bc67f2a0fbd"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteDocument",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NzE0MjgzLCJleHAiOjE3MDg4MDA2ODN9.B4mV2zmnuHZIvDy2gHK58uGB073wVb5teq2SH3qQ-LE",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/document/65d8ea3aa19409ee0c2b28b1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "employer-auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"employer@mail.com\",\r\n    \"password\":\"password\",\r\n    \"companyName\":\"employerCompany\",\r\n    \"companyDescription\":\"persusahaan tentang sesuatu\",\r\n    \"address\":\"jalan sesuatu alamat sesuatu\",\r\n    \"noHp\":\"081999888777\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/employers/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"employer@mail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/employers/login"
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:80/api/employers/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "localhost:80",
 			"request": {
 				"method": "GET",
