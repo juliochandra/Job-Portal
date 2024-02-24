@@ -111,7 +111,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"noHp\": \"081222333444\",\r\n    \"address\": \"update jalan sesuatu no 1234, kota sesuatu, kabupaten sesuatu, provinsi sesuatu\",\r\n    \"birthday\": \"2024-02-21\"\r\n}",
+							"raw": "{\r\n    \"noHp\": \"081222333444\",\r\n    \"address\": \"jalan sesuatu no 1234, kota sesuatu, kabupaten sesuatu, provinsi sesuatu\",\r\n    \"birthday\": \"2024-02-21\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -119,6 +119,104 @@
 							}
 						},
 						"url": "localhost:80/api/users/information"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-education",
+			"item": [
+				{
+					"name": "createEducation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjQwMTEyLCJleHAiOjE3MDg3MjY1MTJ9.xvAMEzu5i6cHfdoASMc7PYr_9jd-eldQHQqKwVhMcMU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"degree\": \"ok bootcamp\",\r\n    \"school\": \"binar\",\r\n    \"startDate\": \"2023-08-15\",\r\n    \"endDate\": \"2024-01-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/users/education"
+					},
+					"response": []
+				},
+				{
+					"name": "findEducation",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjQwMTEyLCJleHAiOjE3MDg3MjY1MTJ9.xvAMEzu5i6cHfdoASMc7PYr_9jd-eldQHQqKwVhMcMU",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/education"
+					},
+					"response": []
+				},
+				{
+					"name": "findEducationById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjQwMTEyLCJleHAiOjE3MDg3MjY1MTJ9.xvAMEzu5i6cHfdoASMc7PYr_9jd-eldQHQqKwVhMcMU",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/education/65d7d517e6d181697150aa25"
+					},
+					"response": []
+				},
+				{
+					"name": "updateEducation",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjQwMTEyLCJleHAiOjE3MDg3MjY1MTJ9.xvAMEzu5i6cHfdoASMc7PYr_9jd-eldQHQqKwVhMcMU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"degree\": \"update bootcamp\",\r\n    \"school\": \"binar\",\r\n    \"startDate\": \"2023-08-15\",\r\n    \"endDate\": \"2024-01-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/users/education/65d7d517e6d181697150aa25"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteEducation",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjQwMTEyLCJleHAiOjE3MDg3MjY1MTJ9.xvAMEzu5i6cHfdoASMc7PYr_9jd-eldQHQqKwVhMcMU",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/education/65d7d512e6d181697150aa22"
 					},
 					"response": []
 				}
