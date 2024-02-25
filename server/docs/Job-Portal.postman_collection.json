@@ -645,6 +645,64 @@
 			]
 		},
 		{
+			"name": "application",
+			"item": [
+				{
+					"name": "createapplication",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{\r\n \"id\":\"65d64d2f376599d065904f3a\",\r\n \"role\":\"user\"\r\n}",
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"secret": "8*W#7bq6%@uCE6%#pe$MyBtTwwY5d@EG",
+								"headerPrefix": "",
+								"algorithm": "HS256",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobId\":\"65dbb91132fdd8041be06d87\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/applications/createapplication"
+					},
+					"response": []
+				},
+				{
+					"name": "findapplication",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{\r\n \"id\":\"65d64d2f376599d065904f3a\",\r\n \"role\":\"user\"\r\n}",
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"secret": "8*W#7bq6%@uCE6%#pe$MyBtTwwY5d@EG",
+								"headerPrefix": "",
+								"algorithm": "HS256",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:80/api/applications/findapplication"
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "localhost:80",
 			"request": {
 				"method": "GET",
