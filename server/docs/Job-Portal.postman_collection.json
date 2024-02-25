@@ -121,6 +121,28 @@
 						"url": "localhost:80/api/users/information"
 					},
 					"response": []
+				},
+				{
+					"name": "findUser",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{\r\n \"id\":\"65d64d2f376599d065904f3a\",\r\n \"role\":\"user\"\r\n}",
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"secret": "8*W#7bq6%@uCE6%#pe$MyBtTwwY5d@EG",
+								"headerPrefix": "",
+								"algorithm": "HS256",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:80/api/users/finduser"
+					},
+					"response": []
 				}
 			]
 		},
@@ -482,6 +504,141 @@
 						"method": "GET",
 						"header": [],
 						"url": "localhost:80/api/employers/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "findEmployer",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{\r\n \"id\":\"65d91eb6a7ff22ff14fec37e\",\r\n \"role\":\"employer\"\r\n}",
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"secret": "8*W#7bq6%@uCE6%#pe$MyBtTwwY5d@EG",
+								"headerPrefix": "",
+								"algorithm": "HS256",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:80/api/employers/findemployer"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "job",
+			"item": [
+				{
+					"name": "createJob",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{\r\n \"id\":\"65d91eb6a7ff22ff14fec37e\",\r\n \"role\":\"employer\"\r\n}",
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"secret": "8*W#7bq6%@uCE6%#pe$MyBtTwwY5d@EG",
+								"headerPrefix": "",
+								"algorithm": "HS256",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"koki\",\r\n    \"description\": \"jadi koki\",\r\n    \"location\": \"jakarta\",\r\n    \"salary\": \"10000000\",\r\n    \"requirement\": \"s3\",\r\n    \"responsbility\":\"masak nadi goreng\",\r\n    \"benefit\": \"makan malam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/jobs/createjob"
+					},
+					"response": []
+				},
+				{
+					"name": "findJob",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:80/api/jobs/findjob"
+					},
+					"response": []
+				},
+				{
+					"name": "findjobById",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:80/api/jobs/findjobById/65dbb829b238fa0267ba671d"
+					},
+					"response": []
+				},
+				{
+					"name": "updateJob",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{\r\n \"id\":\"65d91eb6a7ff22ff14fec37e\",\r\n \"role\":\"employer\"\r\n}",
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"secret": "8*W#7bq6%@uCE6%#pe$MyBtTwwY5d@EG",
+								"headerPrefix": "",
+								"algorithm": "HS256",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"ceo\",\r\n    \"description\": \"jadi bos\",\r\n    \"location\": \"jakarta\",\r\n    \"salary\": \"100000000\",\r\n    \"requirement\": \"s3\",\r\n    \"responsbility\": \"jadi bos\",\r\n    \"benefit\": \"makan malam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/jobs/updatejob/65dbb829b238fa0267ba671d"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteJob",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{\r\n \"id\":\"65d91eb6a7ff22ff14fec37e\",\r\n \"role\":\"employer\"\r\n}",
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"secret": "8*W#7bq6%@uCE6%#pe$MyBtTwwY5d@EG",
+								"headerPrefix": "",
+								"algorithm": "HS256",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:80/api/jobs/deletejob/65dbb94932fdd8041be06d8b"
 					},
 					"response": []
 				}
